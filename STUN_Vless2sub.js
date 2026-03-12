@@ -87,20 +87,20 @@ const html = `
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <title>订阅生成器</title>
+  <title>STUN订阅生成器</title>
 </head>
 <body class="bg-slate-900 flex items-center justify-center min-h-screen p-4">
-  <div class="bg-slate-800 p-8 rounded-2xl shadow-2xl w-full max-w-md text-white">
-    <h2 class="text-2xl font-bold mb-6 text-center text-blue-400">Node Subscription</h2>
+  <div class="bg-slate-800 p-8 rounded-2xl shadow-2xl w-full max-w-md text-white text-center">
+    <h2 class="text-2xl font-bold mb-6 text-blue-400">STUN_Vless2sub Subscription</h2>
     
-    <div class="mb-4">
+    <div class="text-left mb-4">
       <label class="block text-sm font-medium text-slate-300 mb-1">UUID</label>
       <input id="uuid" class="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="请输入你的 UUID">
     </div>
 
-    <div class="mb-6">
-      <label class="block text-sm font-medium text-slate-300 mb-1">TXT 动态域名 (每行一个或用逗号分隔)</label>
-      <textarea id="host" rows="3" class="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="vless10886.us.kg&#10;vless10893.us.kg"></textarea>
+    <div class="text-left mb-6">
+      <label class="block text-sm font-medium text-slate-300 mb-1">TXT 动态域名</label>
+      <textarea id="host" rows="3" class="w-full p-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="domain1.com, domain2.com"></textarea>
     </div>
 
     <div class="flex gap-3 mb-4">
@@ -112,6 +112,10 @@ const html = `
       <textarea id="subUrl" readonly class="w-full p-2 mb-3 bg-slate-800 text-sm text-gray-300 border border-slate-600 rounded-lg resize-none" rows="2"></textarea>
       <button onclick="copySub()" class="w-full bg-slate-600 hover:bg-slate-500 py-2 rounded-lg font-bold mb-4 transition">复制订阅链接</button>
       <div id="qrcode" class="p-2 bg-white rounded-lg"></div>
+    </div>
+
+    <div class="mt-8 pt-4 border-t border-slate-700 text-slate-500 text-xs">
+      Based on <a href="https://github.com/zhuqq029/STUN_Vless2sub" target="_blank" class="hover:text-blue-400 underline">zhuqq029/STUN_Vless2sub</a>
     </div>
   </div>
   <script>
