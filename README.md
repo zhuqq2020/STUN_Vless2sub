@@ -52,7 +52,7 @@ Cloudflare使用Workers部署即可
 
 TTL:自动
 
-3、打开[https://subcreat.zhuqq.pp.ua]()
+3、打开cloudflare创建的works或者使用作者搭建的[https://subcreat.zhuqq.pp.ua]()
 
 UUID输入vless的uuid
 
