@@ -1,12 +1,16 @@
-**## **基本介绍:************
-
+基本介绍:
 适用于没有公网IP确想连接进家里局域网的情况<br>
 优点:<br>
 1、比CF的优选穿透效果好，低延迟。<br>
 2、一次操作永久生效，无论STUN通道地址如何变只需要更新一次订阅即可<br>
-缺点:<br>
+缺点:
 暂时没发现
-
+使用方法:
+Cloudflare使用Workers部署即可
+变量名	示例	备注
+SUBAPI	subapi.cmliussss.net	clash订阅转换后端
+SUBCONFIG	https://raw.githubusercontent.com/zhuqq2020/Mihomo-Party-ACL4SSR/refs/heads/ACL4SSR/STUN_Vless2sub.ini	clash订阅转换配置文件
+SUBNAME	STUN_VLESS	订阅生成器的名称
 lucky的stun节点生成器操作步骤<br>
 1、Openwrt创建好vless订阅节点V2ray 服务器、ShadowSocksR Plus+都有这功能，记录下uuid和端口号<br>
 2、STUN内网穿透<br>
@@ -26,3 +30,4 @@ TTL:自动<br>
 UUID输入vless的uuid<br>
 TXT 动态域名：输入包含txt的动态域名<br>
 点击订阅即可。建议自动更新周期设置短一些一应对通道变更。
+<img width="682" height="1158" alt="image" src="https://github.com/user-attachments/assets/7cb43769-65f2-4bd5-89ee-12eedeb7d29f" />
