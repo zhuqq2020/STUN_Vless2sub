@@ -48,7 +48,29 @@ export default {
 
         if (vlessLinks.length === 0) throw new Error("解析失败，请检查 TXT 记录");
 
-        const userInfoHeader = "upload=0; download=627042091008; total=2199023255552; expire=4102444799";
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1; // 月份从0开始，所以+1
+        const day = now.getDate();
+        const hour = now.getHours();
+        const minute = now.getMinutes();
+        const second = now.getSeconds();
+
+        // 乘积计算
+        const uploadVal = year * month * day * hour * (minute + 1) * (second + 1) * 10; // 防止出现 0
+        const downloadVal = uploadVal * 100;
+        
+        // 转换为字节 (为了让客户端显示正常，单位通常是字节，我们将其放大以便在客户端显示为 GB/MB)
+        // 比如将乘积结果视为 MB，乘以 1024*1024 转换为字节
+        const uploadBytes = uploadVal;
+        const downloadBytes = downloadVal;
+        const totalBytes = 536870912000; // 总流量设为1tb
+        
+        // 过期时间：设为 2099 年
+        const expireTime = 4102444799;
+
+        const userInfoHeader = `upload=${uploadBytes}; download=${downloadBytes}; total=${totalBytes}; expire=${expireTime}`;
+        
         const fileName = `${SUBNAME}`;
         
         const resHeaders = {
@@ -87,7 +109,7 @@ const html = `
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <title>STUN订阅生成器</title>
+  <title>订阅生成器</title>
 </head>
 <body class="bg-slate-900 flex items-center justify-center min-h-screen p-4">
   <div class="bg-slate-800 p-8 rounded-2xl shadow-2xl w-full max-w-md text-white text-center">
