@@ -137,7 +137,7 @@ const html = `
     </div>
 
     <div class="mt-8 pt-4 border-t border-slate-700 text-slate-500 text-xs">
-      Based on <a href="https://github.com/zhuqq029/STUN_Vless2sub" target="_blank" class="hover:text-blue-400 underline">zhuqq029/STUN_Vless2sub</a>
+      Based on <a href="https://github.com/zhuqq2020/STUN_Vless2sub" target="_blank" class="hover:text-blue-400 underline">zhuqq029/STUN_Vless2sub</a>
     </div>
   </div>
   <script>
